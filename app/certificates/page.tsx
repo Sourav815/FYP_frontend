@@ -12,6 +12,7 @@ export default function CertificateFormPage() {
     role: "",
     affiliation: "",
     year: "",
+    conference: "",
     template: "classic",
   });
   const [customTemplate, setCustomTemplate] = useState<string | null>(null);
@@ -83,7 +84,7 @@ export default function CertificateFormPage() {
               Name: formData.name,
               Role: formData.role,
               Affiliation: formData.affiliation,
-              Conference_Name: "ICNSBT",
+              Conference_Name: formData.conference,
               Year: formData.year,
               Purpose: "Certificate Verification",
               Certificate_Id: formData.id,
@@ -103,7 +104,7 @@ export default function CertificateFormPage() {
       // Set qrValue and wait a tick for the QR to update
       const fullLink = `${process.env.NEXT_PUBLIC_LINK}/verification/${documentId}`;
       setQrValue(fullLink);
-      console.log(fullLink)
+      console.log(fullLink);
 
       // Wait for the QR code to update and render
       setTimeout(async () => {
@@ -126,6 +127,7 @@ export default function CertificateFormPage() {
           role: "",
           affiliation: "",
           year: "",
+          conference: "",
           template: "classic",
         });
         setNamePos({ x: 0, y: 0 });
@@ -402,7 +404,7 @@ export default function CertificateFormPage() {
                 htmlFor="role"
                 className="block mb-1 font-medium text-sm md:text-base"
               >
-                Role
+                Description
               </label>
               <input
                 id="role"
@@ -448,6 +450,23 @@ export default function CertificateFormPage() {
                 className="w-full p-2 border rounded text-sm md:text-base"
                 required
                 placeholder="ex. 2025"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="conference"
+                className="block mb-1 font-medium text-sm md:text-base"
+              >
+                Conference Name
+              </label>
+              <input
+                id="conference"
+                name="conference"
+                value={formData.conference}
+                onChange={handleChange}
+                className="w-full p-2 border rounded text-sm md:text-base"
+                required
+                placeholder="ex. IEEE"
               />
             </div>
 
