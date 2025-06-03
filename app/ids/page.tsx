@@ -40,8 +40,10 @@ export default function CertificateFormPage() {
   }, []);
 
   const templateImages: Record<string, string> = {
-    classic: "/ids/ID1.png",
-    modern: "/ids/ID2.png",
+    classic: "/ids/IDI.png",
+    modern: "/ids/IDII.png",
+    minimalist: "/ids/IDIII.png",
+    elegant: "/ids/IDIV.png",
   };
 
   const handleChange = (

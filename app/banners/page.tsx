@@ -304,23 +304,12 @@ export default function BannerFormPage() {
               <div
                 className="absolute w-full flex justify-center"
                 style={{
-                  // Use bottom offset if you want it fixed near bottom or use top if preferred
                   top: `calc(60% + ${organizedByPos.y}px)`,
                   left: "50%",
                   transform: `translate(calc(-50% + ${organizedByPos.x}px), 0)`,
-                  maxHeight: "64px",
-                  overflowX: "auto",
-                  overflowY: "auto",
                 }}
               >
-                <div
-                  className="text-lg font-serif text-white rounded w-[80%] text-center whitespace-pre-wrap"
-                  style={{
-                    maxHeight: "64px",
-                    overflowX: "auto",
-                    overflowY: "auto",
-                  }}
-                >
+                <div className="text-lg font-serif text-white rounded w-[80%] text-center whitespace-pre-wrap leading-6">
                   Organized by | {formData.organizedBy}
                 </div>
               </div>
